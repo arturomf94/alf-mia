@@ -34,16 +34,16 @@ def rule4(current_string):
 
 def derive_string(current_string):
     new_string = rule1(current_string)
-    if new_string != '':
+    if new_string != '' and not(new_string in all_strings):
         non_derived_strings.append(new_string)
     new_string = rule2(current_string)
-    if new_string != '':
+    if new_string != '' and not(new_string in all_strings):
         non_derived_strings.append(new_string)
     new_string = rule3(current_string)
-    if new_string != '':
+    if new_string != '' and not(new_string in all_strings):
         non_derived_strings.append(new_string)
     new_string = rule4(current_string)
-    if new_string != '':
+    if new_string != '' and not(new_string in all_strings):
         non_derived_strings.append(new_string)
     non_derived_strings.remove(current_string)
     derived_strings.append(current_string)
@@ -52,11 +52,12 @@ objective_string = raw_input()
 
 all_strings = derived_strings + non_derived_strings
 
-while not (objective_string in all_strings or 1000 < len(all_strings)):
+while not (objective_string in all_strings or 10000 < len(all_strings)):
             if non_derived_strings != '':
                 derive_string(non_derived_strings[0])
             all_strings = derived_strings + non_derived_strings
 
-all_strings = derived_strings + non_derived_strings
-
-print(all_strings)
+if objective_string in all_strings:
+    print(all_strings)
+else:
+    print('No es teorema.')
