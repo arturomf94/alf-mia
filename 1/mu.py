@@ -52,7 +52,7 @@ objective_string = raw_input()
 
 all_strings = derived_strings + non_derived_strings
 
-while not (objective_string in all_strings or 10000 < len(all_strings)):
+while not (objective_string in all_strings or 5000 < len(all_strings)):
             if non_derived_strings != '':
                 derive_string(non_derived_strings[0])
             all_strings = derived_strings + non_derived_strings
