@@ -5,6 +5,7 @@ ax = 'MI'
 
 derived_strings = []
 non_derived_strings = [ax]
+all_strings = derived_strings + non_derived_strings
 
 def rule1(current_string):
     if 'I' == current_string[len(current_string) - 1]:
@@ -35,24 +36,27 @@ def rule4(current_string):
         return ''
 
 def derive_string(current_string):
+    global all_strings
     new_string = rule1(current_string)
     if new_string != '' and not(new_string in all_strings):
         non_derived_strings.append(new_string)
+        all_strings = derived_strings + non_derived_strings
     new_string = rule2(current_string)
     if new_string != '' and not(new_string in all_strings):
         non_derived_strings.append(new_string)
+        all_strings = derived_strings + non_derived_strings
     new_string = rule3(current_string)
     if new_string != '' and not(new_string in all_strings):
         non_derived_strings.append(new_string)
+        all_strings = derived_strings + non_derived_strings
     new_string = rule4(current_string)
     if new_string != '' and not(new_string in all_strings):
         non_derived_strings.append(new_string)
+        all_strings = derived_strings + non_derived_strings
     non_derived_strings.remove(current_string)
     derived_strings.append(current_string)
 
 objective_string = raw_input()
-
-all_strings = derived_strings + non_derived_strings
 
 while not (objective_string in all_strings or 5000 < len(all_strings)):
             if non_derived_strings != '':
