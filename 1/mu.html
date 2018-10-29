@@ -11771,6 +11771,49 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Tarea">Tarea<a class="anchor-link" href="#Tarea">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>En este reporte se expone una implementación del <em>Sistema MU</em>, originalmente formulado por Douglas Hofstadter en su libro <em>Gödel, Escher y Bach</em>. El <em>Sistema MU</em> ilustra cómo hay sistemas formales que pueden estar limitados en su poder demostrativo.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Reglas-Generales">Reglas Generales<a class="anchor-link" href="#Reglas-Generales">&#182;</a></h2><p>El sistema consiste en una derivación de cadenas, llamadas teoremas, a partir de una cadena que actua como axioma y una serie de reglas de inferencia. Siguiendo el ejercicio de Douglas Hofstadter, quisieramos ver si con estos elementos podemos derivar la cadena 'MU'.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="C&#243;digo:">C&#243;digo:<a class="anchor-link" href="#C&#243;digo:">&#182;</a></h3><p>Aquí se define el axioma 'MI' y se crean listas para guardar las cadenas <em>derivadas</em> a partir de este axioma con las reglas de inferencia y aquellas cadenas que se derivan de estas, y así, sucesivamente.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
@@ -11787,6 +11830,15 @@ div#notebook {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Las reglas de inferencia están especificadas en el siguiente bloque.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -11827,6 +11879,15 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>En este bloque se crea una función para derivar todas las cadenas nuevas a partir de una cadena en específico y las reglas de inferencia especificadas en el bloque anterior. Estas nuevas cadenas se guardan en las listas del primer bloque.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
@@ -11858,6 +11919,15 @@ div#notebook {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Para hacer una consulta definimos la <em>cadena objetivo</em>. El proceso de búsqueda en el espacio de teoremas del sistema formal. Agregamos la restricción de no tener más de 5,000 cadenas derivadas, para evitar que este proceso se acabe la memoria del sistema que lo computa. Estrictamente hablando, si no encuentra la cadena con esta restricción no quiere decir que la cadena no es teorema. Sin embargo, haciendo una simplificación, lo interpretamos de esa manera.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
