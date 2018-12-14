@@ -43,3 +43,6 @@ def cut(string):
         return string[:-3]
     else:
         return string
+
+
+import pdb; pdb.set_trace()
